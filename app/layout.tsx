@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Preet Ghaghada — websites that bring you customers",
+  title: "Preet Ghaghada — websites, ads and AI that answers every enquiry",
   description:
-    "Preet Ghaghada builds websites, marketing and automation for small businesses. Full site launching soon.",
+    "I build your website, run your ads, and my AI answers every enquiry. Websites, marketing and AI automation for small businesses. Full site launching soon.",
 };
 
 export default function RootLayout({
