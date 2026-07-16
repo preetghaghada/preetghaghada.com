@@ -42,16 +42,22 @@ export async function sendContactMessage(
     };
   }
 
-  const resend = new Resend(process.env.RESEND_API_KEY);
-  const { error } = await resend.emails.send({
-    from: "Preet Ghaghada <contact@preetghaghada.com>",
-    to: "preet@preetghaghada.com",
-    replyTo: email,
-    subject: `Website enquiry from ${name}`,
-    text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
-  });
+  // Missing key or network failure must degrade to the friendly error,
+  // never a 500 — new Resend() throws when the key is absent.
+  try {
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) throw new Error("RESEND_API_KEY is not set");
 
-  if (error) {
+    const resend = new Resend(apiKey);
+    const { error } = await resend.emails.send({
+      from: "Preet Ghaghada <contact@preetghaghada.com>",
+      to: "preet@preetghaghada.com",
+      replyTo: email,
+      subject: `Website enquiry from ${name}`,
+      text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
+    });
+    if (error) throw new Error(error.message);
+  } catch {
     return {
       status: "error",
       error:
