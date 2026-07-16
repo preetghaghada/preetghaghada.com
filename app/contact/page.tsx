@@ -9,16 +9,6 @@ export const metadata: Metadata = {
 
 const channels = [
   {
-    label: "WhatsApp",
-    value: "+91 7249639699",
-    href: "https://wa.me/917249639699",
-  },
-  {
-    label: "Phone",
-    value: "+91 7249639699",
-    href: "tel:+917249639699",
-  },
-  {
     label: "Book a call",
     value: "15-minute intro call",
     href: "https://cal.com/preetghaghada/intro-call-15-min",
@@ -50,6 +40,25 @@ export default function Contact() {
         </div>
 
         <aside className="flex flex-col gap-8">
+          <div className="flex flex-col gap-1">
+            <h2 className="text-sm font-medium uppercase tracking-wide text-zinc-500 dark:text-zinc-400">
+              WhatsApp / phone
+            </h2>
+            <a
+              href="https://wa.me/917249639699"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium underline-offset-4 hover:underline"
+            >
+              +91 7249639699
+            </a>
+            <a
+              href="tel:+917249639699"
+              className="text-sm text-zinc-500 underline-offset-4 hover:underline dark:text-zinc-400"
+            >
+              Call instead
+            </a>
+          </div>
           {channels.map(({ label, value, href }) => (
             <div key={label} className="flex flex-col gap-1">
               <h2 className="text-sm font-medium uppercase tracking-wide text-zinc-500 dark:text-zinc-400">
