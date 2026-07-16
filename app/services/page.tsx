@@ -33,7 +33,7 @@ const services = [
 
 export default function Services() {
   return (
-    <div className="mx-auto flex w-full max-w-5xl flex-col gap-16 px-6 py-24">
+    <div className="mx-auto flex w-full max-w-5xl flex-col gap-16 px-6 py-16 sm:py-24">
       <section className="flex max-w-3xl flex-col gap-4">
         <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
           Services

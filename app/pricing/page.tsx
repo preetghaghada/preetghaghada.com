@@ -33,7 +33,7 @@ const websiteTiers = [
 
 export default function Pricing() {
   return (
-    <div className="mx-auto flex w-full max-w-5xl flex-col gap-16 px-6 py-24">
+    <div className="mx-auto flex w-full max-w-5xl flex-col gap-16 px-6 py-16 sm:py-24">
       <section className="flex max-w-3xl flex-col gap-4">
         <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
           Pricing
@@ -49,7 +49,27 @@ export default function Pricing() {
         <h2 className="text-2xl font-semibold tracking-tight">
           Websites — one-time price
         </h2>
-        <div className="overflow-x-auto">
+        <div className="flex flex-col gap-4 sm:hidden">
+          {websiteTiers.map(({ tier, includes, india, global }) => (
+            <div
+              key={tier}
+              className="flex flex-col gap-2 rounded-lg border border-zinc-200 p-5 dark:border-zinc-800"
+            >
+              <h3 className="font-semibold">{tier}</h3>
+              <p className="text-sm leading-6 text-zinc-600 dark:text-zinc-400">
+                {includes}
+              </p>
+              <p className="text-sm">
+                <span className="font-medium">{india}</span>
+                <span className="text-zinc-500 dark:text-zinc-400">
+                  {" "}
+                  India · {global} global
+                </span>
+              </p>
+            </div>
+          ))}
+        </div>
+        <div className="hidden overflow-x-auto sm:block">
           <table className="w-full min-w-[640px] border-collapse text-left text-sm">
             <thead>
               <tr className="border-b border-zinc-300 dark:border-zinc-700">

@@ -20,9 +20,9 @@ const services = [
 
 export default function Home() {
   return (
-    <div className="mx-auto flex w-full max-w-5xl flex-col gap-20 px-6 py-24">
+    <div className="mx-auto flex w-full max-w-5xl flex-col gap-20 px-6 py-16 sm:py-24">
       <section className="flex max-w-3xl flex-col gap-6">
-        <h1 className="text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
+        <h1 className="text-3xl font-semibold leading-tight tracking-tight sm:text-5xl">
           Preet Ghaghada — I build your website, run your ads, and my AI
           answers every enquiry.
         </h1>
@@ -52,7 +52,7 @@ export default function Home() {
         <h2 className="text-2xl font-semibold tracking-tight">
           What I do
         </h2>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {services.map(({ title, blurb }) => (
             <div
               key={title}

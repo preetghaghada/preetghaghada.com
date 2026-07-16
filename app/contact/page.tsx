@@ -22,7 +22,7 @@ const channels = [
 
 export default function Contact() {
   return (
-    <div className="mx-auto flex w-full max-w-5xl flex-col gap-16 px-6 py-24">
+    <div className="mx-auto flex w-full max-w-5xl flex-col gap-16 px-6 py-16 sm:py-24">
       <section className="flex max-w-3xl flex-col gap-4">
         <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
           Contact
@@ -34,7 +34,7 @@ export default function Contact() {
         </p>
       </section>
 
-      <div className="grid gap-16 sm:grid-cols-[2fr_1fr]">
+      <div className="grid gap-12 sm:grid-cols-[2fr_1fr] sm:gap-16">
         <div className="max-w-xl">
           <ContactForm />
         </div>
