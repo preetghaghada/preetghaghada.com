@@ -18,9 +18,34 @@ const services = [
   },
 ];
 
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Preet Ghaghada",
+  url: "https://preetghaghada.com",
+  email: "mailto:preet@preetghaghada.com",
+  jobTitle: "Web developer, marketing and AI automation consultant",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Pune",
+    addressCountry: "IN",
+  },
+  knowsAbout: ["Web development", "Digital marketing", "AI automation"],
+  sameAs: [
+    "https://www.linkedin.com/in/preetghaghada",
+    "https://x.com/preetghaghada",
+    "https://www.instagram.com/preet_ghaghada",
+    "https://github.com/preetghaghada",
+  ],
+};
+
 export default function Home() {
   return (
     <div className="mx-auto flex w-full max-w-5xl flex-col gap-20 px-6 py-16 sm:py-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+      />
       <section className="flex max-w-3xl flex-col gap-6">
         <h1 className="text-3xl font-semibold leading-tight tracking-tight sm:text-5xl">
           Preet Ghaghada — I build your website, run your ads, and my AI
